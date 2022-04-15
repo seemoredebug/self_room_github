@@ -1,0 +1,33 @@
+# 应用名称
+# 应用服务 WEB 访问端口
+#server.port=8080
+#下面这些内容是为了让MyBatis映射
+#指定Mybatis的Mapper文件
+#spring.datasource.username=root
+#spring.datasource.url=jdbc:mysql://localhost:3306/test?serverTimezone=UTC
+#spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#spring.datasource.password=123456
+#
+#mybatis.config-location=classpath:mybatis/mybatisConfig.xml
+#mybatis.mapper-locations=classpath:mybatis/mappers/*.xml
+
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: selfRoom
+  resources:
+    static-locations: classpath:static
+
+mybatis:
+  config-location: classpath:mybatis/mybatisConfig.xml
+  mapper-locations: classpath:mybatis/mappers/*.xml
+server:
+  port: 443
+  ssl:
+    key-store: classpath:7532868_www.zhouxuhuiweb.xyz.pfx
+    key-store-password: w14RLOXV
+    key-store-type: PKCS12

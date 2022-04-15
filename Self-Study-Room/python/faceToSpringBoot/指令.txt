@@ -1,0 +1,9 @@
+python face_inMySqlAPI.py all_faceDatas/190308010333-1.jpg  190308010333
+
+pyinstaller 打包0.2.3以上的torchvision有概率报错解决方案是吧以上版本的写成自己的...
+ops文件夹 -c文件 _utils函数 最外层导入ops
+f:\anaconda\envs\facenet-retinaface-pytorch-main\lib\site-packages
+
+from torchvision import _C as C 报错
+pip install  torchvision===0.4.0 -f https://download.pytorch.org/whl/torch_stable.html
+torch===1.2.0

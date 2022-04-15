@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.selfroom.mappers.UserDataMapper">
+    <select id="getuserData" resultType="com.example.selfroom.bean.UserData">
+        SELECT name,score,sex,mobile,studentClass,college,account FROM test.personal_information  WHERE score = #{score}
+    </select>
+
+    <select id="getAllUserData" resultType="com.example.selfroom.bean.UserDataROOT">
+        SELECT * FROM test.personal_information
+    </select>
+    <select id="countAllUserData" resultType="int">
+        SELECT count(*) FROM test.personal_information
+    </select>
+    <delete id="DeleteAll">
+        delete from test.personal_information   WHERE score like #{grade}
+    </delete>
+    <delete id="DeleteOne">
+        delete from test.personal_information  WHERE score = #{grade}
+    </delete>
+    <select id="findpassword" resultType="string">
+        SELECT password FROM test.personal_information  WHERE score = #{score}
+    </select>
+</mapper>

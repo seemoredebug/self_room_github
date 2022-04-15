@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.selfroom.mappers.SysFunctionMapper">
+    <insert id="addUSerAppointment" parameterType="com.example.selfroom.bean.USerAppointment">
+    insert into test.reserveinformation(reservationNumber, seatNumber, timequantum, remark, score,used)
+                                VALUES   (#{reservationNumber},#{seatNumber},#{timequantum},#{remark},#{score},#{used})
+    </insert>
+    <select id="countUSerAppointmentByData" resultType="int">
+        select COUNT(*)from test.reserveinformation where timequantum like #{timequantum}
+    </select>
+
+    <delete id="dropUSerAppointment">
+        delete from test.reserveinformation  WHERE  reservationNumber=#{reservationNumber}
+    </delete>
+</mapper>

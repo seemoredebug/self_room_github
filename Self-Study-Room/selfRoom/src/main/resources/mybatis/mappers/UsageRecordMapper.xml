@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.selfroom.mappers.UsageRecordMapper">
+    <select id="getUsageRecord" resultType="com.example.selfroom.bean.UsageRecord">
+        SELECT * FROM test.usagerecord  WHERE roomNumber like #{room}
+    </select>
+
+    <select id="getOneUsageRecord" resultType="int">
+        SELECT count(*) FROM test.usagerecord  WHERE recordNumber = #{recordNumber}
+    </select>
+
+    <insert id="insertUsageRecord" parameterType="com.example.selfroom.bean.UsageRecord">
+        insert into test.usagerecord(recordNumber, seatTime, roomNumber, score)
+                            VALUES(#{recordNumber},#{seatTime},#{roomNumber},#{score})
+    </insert>
+
+    <delete id="dropUsageRecord" parameterType="com.example.selfroom.bean.UsageRecord">
+        delete from test.usagerecord  WHERE  seatTime=#{seatTime} and score=#{score}
+    </delete>
+</mapper>
