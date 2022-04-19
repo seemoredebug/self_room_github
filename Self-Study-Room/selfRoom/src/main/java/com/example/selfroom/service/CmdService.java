@@ -9,11 +9,12 @@ import java.io.IOException;
 @Async("CMDExecutor")
 public class CmdService {
     public String doFaceInMySql(String fileurl,String score){
-        //face_inMySqlAPI.exe all_faceDatas/190308010333-1.jpg  190308010333
-        String c="face_inMySqlAPI.exe ";
+        //./face_inMySqlAPI.exe all_faceDatas/190308010333-1.jpg  190308010333
+        String c="./face_inMySqlAPI ";
         c+=fileurl;
         c+=" ";
         c+=score;
+        System.out.println(c);
         try {
 
             Process process=Runtime.getRuntime().exec(c);
